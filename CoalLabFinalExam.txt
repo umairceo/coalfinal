@@ -1,3 +1,26 @@
+//Question 01:
+//Iterative Binary Search // Time Complexity: (log2n)
+//Recursive Ternary Search // Time Complexity: (log3n)
+//Recursive Merge Sort  // Time Complexity: (nlogn)
+//Recursive Insertion Sort   // Time Complexity: (nlogn)
+//Iterative Selection Sort in Descending Order  // time complexity: (nlogn)
+//Question 02:
+//Method of inserting Char value BST // time complexity: (n)
+//Method of Finding Char value in BST // time complexity: (n)
+//Method of Pre order Traversal in BST // time complexity: (n)
+//Method of in order Traversal in BST // time complexity: (n)
+//Finding Min char value in BST   // time complexity: (n)
+
+
+
+
+
+
+
+
+
+
+
 import java.util.Scanner;
 
 import java.util.Arrays;
@@ -765,3 +788,208 @@ public class Main {
 //        }
 //    }
 //}
+
+
+
+
+
+
+
+//BinarySearch Tree
+// Main File
+
+import java.util.Arrays;
+
+public class main
+{
+    public static void main(String[] args) {
+        BinaryTree binaryTree = new BinaryTree();
+        QuickSort quickSort = new QuickSort();
+
+       /* //Quick Sort Array
+        int[] array = {69,420,56,3,45,1,0};
+        quickSort.sort(array,0,array.length-1);
+        System.out.println(Arrays.toString(array));*/
+
+        binaryTree.insert(7);
+        binaryTree.insert(4);
+        binaryTree.insert(9);
+        binaryTree.insert(1);
+        binaryTree.insert(6);
+        binaryTree.insert(8);
+        binaryTree.insert(10);
+
+        boolean result = binaryTree.Find(7);
+
+        if(result)
+            System.out.println("Found!");
+        else
+            System.out.println("Not Found!");
+        System.out.println("Done");
+
+        binaryTree.traverAscending();
+        System.out.println("\n");
+        binaryTree.traverPreOrder();
+        System.out.println("\n");
+        binaryTree.traverDescending();
+
+
+
+    }
+}
+
+
+//Tree File
+public class BinaryTree
+{
+
+    private class Node
+    {
+
+        int data;
+        float floatData;
+        Node left;
+        Node right;
+
+        Node(int data)
+        {
+            this.left = null;
+            this.right = null;
+            this.data = data;
+        }
+
+        public String Display() {
+            return "Node = " + data;
+        }
+    }
+
+    private Node root;
+
+    public void BinaryTree()
+    {
+        this.root = null;
+    }
+
+    public boolean isEmpty()
+    {
+        return root == null;
+    }
+
+    public void insert(int data)
+    {
+        if (isEmpty())
+        {
+            root = new Node(data);
+            return;
+        }
+        Node currentNode = root;
+
+        while (true)
+        {
+            if (data<=currentNode.data)
+            {
+                if (currentNode.left == null) {
+                    currentNode.left = new Node(data);
+                   break;
+                }
+                currentNode = currentNode.left;
+            }
+            else
+                {
+                if (currentNode.right == null)
+                {
+                    currentNode.right = new Node(data);
+                    return;
+                }
+                currentNode = currentNode.right;
+            }
+        }
+    }
+
+    public boolean Find(int data)
+    {
+        Node currentNode = root;
+        while (currentNode != null)
+        {
+            if (data < currentNode.data)
+            {
+                currentNode = currentNode.left;
+            }
+            else if (data > currentNode.data)
+            {
+                currentNode = currentNode.right;
+            }
+            else
+                {
+                return true;
+                }
+        }
+        return false;
+    }
+
+
+
+    public void traverAscending()
+    {
+        traverAscending(root);
+    }
+    public void traverDescending()
+    {
+        traverDescending(root);
+
+    }
+    public void traverPreOrder()
+    {
+        traverPreOrder(root);
+    }
+
+    private void traverAscending(Node root)
+    {
+        if (root == null)
+        {
+            return;
+        }
+        traverAscending(root.left);
+        System.out.print(root.data + " ");
+        traverAscending(root.right);
+    }
+
+    private void traverDescending(Node root)
+    {
+        if (root == null)
+        {
+            return;
+        }
+        traverDescending(root.right);
+        System.out.print(root.data + " ");
+        traverDescending(root.left);
+    }
+
+    private void traverPreOrder(Node root)
+    {
+        if (root == null)
+        {
+            return;
+        }
+        System.out.print(root.data + " ");
+        traverPreOrder(root.right);
+        traverPreOrder(root.left);
+    }
+
+    public int Height()
+    {
+        return Height(root);
+    }
+
+    public int Height(Node node)
+    {
+        if (node == null) {
+            return -1;
+        }
+        else if (node.left == null && node.right == null)
+        {
+            return 1;
+        }
+        return 1 + Math.max(Height(node.left), Height(node.right));
+    }
+}
