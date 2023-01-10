@@ -29,130 +29,150 @@ public class Main {
     public static void main(String[] args) {
 
         int[] array = {1, 22, 43, 46, 57, 65, 87, 8, 9, 107, 11,182,13,1478,1785};
-       // int[] sortingArrayUsingSelectionSort = {32,43,223,645,6,211234,67,224,61,136,1,13,6,13};
-       // int[] sortingArrayUsingResursiveSelectionSort = {32,43,223,645,6,211234,67,224,61,136,1,13,6,13};
+        // int[] sortingArrayUsingSelectionSort = {32,43,223,645,6,211234,67,224,61,136,1,13,6,13};
+        // int[] sortingArrayUsingResursiveSelectionSort = {32,43,223,645,6,211234,67,224,61,136,1,13,6,13};
 
 
 
-    Scanner scan = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
         System.out.println("Enter Op");
-                int op = scan.nextInt();
+        int op = scan.nextInt();
 
-                switch(op) {
-                case 1:
-                        System.out.println(" Selection Sort");
-                        int[] sel = selectionSort(array);
-                        for (int k = 0; k<array.length;k++){
-                        System.out.print( sel[k] + " ");
-                    }
+        switch(op) {
+            case 1:
+                System.out.println(" Selection Sort");
+                int[] sel = selectionSort(array);
+                for (int k = 0; k<array.length;k++){
+                    System.out.print( sel[k] + " ");
+                }
                 break;
-                case 2:
-                       System.out.println("Resercive Selection Sort");
-                       int[] Reservesel = selectionSort(array);
-                        for (int l = 0; l<array.length;l++){
-                        System.out.print( Reservesel[l] + " ");
-                    }
+            case 2:
+                System.out.println("Resercive Selection Sort");
+                int[] Reservesel = selectionSort(array);
+                for (int l = 0; l<array.length;l++){
+                    System.out.print( Reservesel[l] + " ");
+                }
                 break;
-                    case 3:
-                        System.out.println("Jump Search");
-                        int index2 = JumpSearch(array, 22);
-                        //int index1 = ternarySearch(array,8,0,array.length-1);
-                        if (index2 != -1)
-                            System.out.println("Value Found at index " + index2);
-                        else
-                            System.out.println("Value Not Found");
+            case 3:
+                System.out.println("Jump Search");
+                int index2 = JumpSearch(array, 22);
+                //int index1 = ternarySearch(array,8,0,array.length-1);
+                if (index2 != -1)
+                    System.out.println("Value Found at index " + index2);
+                else
+                    System.out.println("Value Not Found");
                 break;
-                    case 4:
-                        System.out.println("Ternery Search");
-                        int index3 = ternarySearch(array, 87,65,8);
-                        //int index1 = ternarySearch(array,8,0,array.length-1);
-                        if (index3 != -1)
-                            System.out.println("Value Found at index " + index3);
-                        else
-                            System.out.println("Value Not Found");
-                 break;
-                    case 5:
-                        System.out.println("Bubble Sort");
-                        int bubbleSort[]= bubbleSort(array);
-                        System.out.println(Arrays.toString(bubbleSort));
-                        break;
-                    case 6:
-                        System.out.println("Merge Sort");
-                        System.out.println(Arrays.toString(array));
-                        break;
-                    case 7:
-                        System.out.println("Ternery Search");
-                        int l, r, p, key;
+            case 4:
+                System.out.println("Ternery Search");
+                int index3 = ternarySearch(array, 87,65,8);
+                //int index1 = ternarySearch(array,8,0,array.length-1);
+                if (index3 != -1)
+                    System.out.println("Value Found at index " + index3);
+                else
+                    System.out.println("Value Not Found");
+                break;
+            case 5:
+                System.out.println("Bubble Sort");
+                int bubbleSort[]= bubbleSort(array);
+                System.out.println(Arrays.toString(bubbleSort));
+                break;
+            case 6:
+                System.out.println("Merge Sort");
+                System.out.println(Arrays.toString(array));
+                break;
+            case 7:
+                System.out.println("Ternery Search");
+                int l, r, p, key;
 
-                        // Get the array
-                        // Sort the array if not sorted
-                        int ar[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+                // Get the array
+                // Sort the array if not sorted
+                int ar[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
-                        // Starting index
-                        l = 0;
+                // Starting index
+                l = 0;
 
-                        // length of array
-                        r = 9;
+                // length of array
+                r = 9;
 
-                        // Checking for 5
+                // Checking for 5
 
-                        // Key to be searched in the array
-                        key = 5;
+                // Key to be searched in the array
+                key = 5;
 
-                        // Search the key using ternarySearch
-                        p = ternarySearch(l, r, key, ar);
+                // Search the key using ternarySearch
+                p = ternarySearch(l, r, key, ar);
 
-                        // Print the result
-                        System.out.println("Index of " + key + " is " + p);
+                // Print the result
+                System.out.println("Index of " + key + " is " + p);
 
-                        // Checking for 50
+                // Checking for 50
 
-                        // Key to be searched in the array
-                        key = 50;
+                // Key to be searched in the array
+                key = 50;
 
-                        // Search the key using ternarySearch
-                        p = ternarySearch(l, r, key, ar);
+                // Search the key using ternarySearch
+                p = ternarySearch(l, r, key, ar);
 
-                        // Print the result
-                        System.out.println("Index of " + key + " is " + p);
-                        break;
-                    case 8:
-                        System.out.println("Binary Search");
-                        int arr[] = {10,20,30,40,50};
-                        int keyy = 20;
-                        int last=arr.length-1;
-                        binarySearch(arr,0,last,keyy);
-                        break;
-                    case 9:
-                       // int arr[] = {64, 34, 25, 12, 22, 11, 90};
-                        bubbleSortRec(array, array.length);
-                        System.out.println("Bubble Sort Recersive : ");
-                        System.out.println(Arrays.toString(array));
-                        break;
-                    case 10:
-                        int myarr[] = inserttionSort(new int[]{23,5,24,1,4,2,4,6,86,4,5,73,55} );
-                        System.out.println(" Insertion Sort");
-                        for (int i = 0; i<myarr.length;i++){
-                            System.out.print(" " + myarr[i] + " ");
-                        }
-                        break;
-                    case 11:
-                        int myarray[] = {1,31,31,341,3,51,1,3,1,3,3,54,6,3,67,5,75,4};
-                        reserviceInsertionSort(myarray,myarray.length);
-                        System.out.println(" Recursive Insertion Sort");
-                        for (int j = 0; j<myarray.length; j++){
-                            System.out.print(" " + myarray[j] + " ");
+                // Print the result
+                System.out.println("Index of " + key + " is " + p);
+                break;
+            case 8:
+                System.out.println("Binary Search");
+                int arr[] = {10,20,30,40,50};
+                int keyy = 20;
+                int last=arr.length-1;
+                binarySearch(arr,0,last,keyy);
+                break;
+            case 9:
+                // int arr[] = {64, 34, 25, 12, 22, 11, 90};
+                bubbleSortRec(array, array.length);
+                System.out.println("Bubble Sort Recersive : ");
+                System.out.println(Arrays.toString(array));
+                break;
+            case 10:
+                int myarr[] = inserttionSort(new int[]{23,5,24,1,4,2,4,6,86,4,5,73,55} );
+                System.out.println(" Insertion Sort");
+                for (int i = 0; i<myarr.length;i++){
+                    System.out.print(" " + myarr[i] + " ");
+                }
+                break;
+            case 11:
+                int myarray[] = {1,31,31,341,3,51,1,3,1,3,3,54,6,3,67,5,75,4};
+                reserviceInsertionSort(myarray,myarray.length);
+                System.out.println(" Recursive Insertion Sort");
+                for (int j = 0; j<myarray.length; j++){
+                    System.out.print(" " + myarray[j] + " ");
 
-                        }
-                        break;
-                    case 12:
-                        //Liner Search For Unsorted List
-                        int arrayy[] = {2,45,1,52,2,4,23};
-                        System.out.println("Liner Search");
-                        Linersearch(arrayy,23);
-                        break;
-                default:
-                       System.out.println("Default");
+                }
+                break;
+            case 12:
+                //Liner Search For Unsorted List
+                int arrayy[] = {2,45,1,52,2,4,23};
+                System.out.println("Liner Search");
+                Linersearch(arrayy,23);
+                break;
+            case 13:
+                System.out.println("Quick SOrt");
+                Quicksort(array,0,array.length-1);
+                for (int j = 0; j<array.length; j++){
+                    System.out.print(" " + array[j] + " ");
+
+                }
+                break;
+            case 14:
+                System.out.println("Resercive Bubble SOrt");
+                bubbleSortRec(array,array.length);
+                for (int j = 0; j<array.length; j++){
+                    System.out.print(" " + array[j] + " ");
+
+                }
+                break;
+            case 15:
+                System.out.println("Ternery Search Recersive");
+
+                break;
+            default:
+                System.out.println("Default");
         }
     }
 
@@ -280,48 +300,48 @@ public class Main {
 
 
 
-        // Function to perform Ternary Search
-        public static int ternarySearch(int l, int r, int key, int ar[])
-        {
-            if (r >= l) {
+    // Function to perform Ternary Search
+    public static int ternarySearch(int l, int r, int key, int ar[])
+    {
+        if (r >= l) {
 
-                // Find the mid1 and mid2
-                int mid1 = l + (r - l) / 3;
-                int mid2 = r - (r - l) / 3;
+            // Find the mid1 and mid2
+            int mid1 = l + (r - l) / 3;
+            int mid2 = r - (r - l) / 3;
 
-                // Check if key is present at any mid
-                if (ar[mid1] == key) {
-                    return mid1;
-                }
-                if (ar[mid2] == key) {
-                    return mid2;
-                }
-
-                // Since key is not present at mid,
-                // check in which region it is present
-                // then repeat the Search operation
-                // in that region
-
-                if (key < ar[mid1]) {
-
-                    // The key lies in between l and mid1
-                    return ternarySearch(l, mid1 - 1, key, ar);
-                }
-                else if (key > ar[mid2]) {
-
-                    // The key lies in between mid2 and r
-                    return ternarySearch(mid2 + 1, r, key, ar);
-                }
-                else {
-
-                    // The key lies in between mid1 and mid2
-                    return ternarySearch(mid1 + 1, mid2 - 1, key, ar);
-                }
+            // Check if key is present at any mid
+            if (ar[mid1] == key) {
+                return mid1;
+            }
+            if (ar[mid2] == key) {
+                return mid2;
             }
 
-            // Key not found
-            return -1;
+            // Since key is not present at mid,
+            // check in which region it is present
+            // then repeat the Search operation
+            // in that region
+
+            if (key < ar[mid1]) {
+
+                // The key lies in between l and mid1
+                return ternarySearch(l, mid1 - 1, key, ar);
+            }
+            else if (key > ar[mid2]) {
+
+                // The key lies in between mid2 and r
+                return ternarySearch(mid2 + 1, r, key, ar);
+            }
+            else {
+
+                // The key lies in between mid1 and mid2
+                return ternarySearch(mid1 + 1, mid2 - 1, key, ar);
+            }
         }
+
+        // Key not found
+        return -1;
+    }
 
     public static void binarySearch(int arr[], int first, int last, int key){
         int mid = (first + last)/2;
@@ -341,37 +361,37 @@ public class Main {
         }
     }
 
-        public static void bubbleSortRec(int arr[], int n)
-        {
-            // Base case
-            if (n == 1)
-                return;
+    public static void bubbleSortRec(int arr[], int n)
+    {
+        // Base case
+        if (n == 1)
+            return;
 
-            int count = 0;
-            // One pass of bubble sort. After
-            // this pass, the largest element
-            // is moved (or bubbled) to end.
-            for (int i=0; i<n-1; i++)
-                if (arr[i] > arr[i+1])
-                {
-                    // swap arr[i], arr[i+1]
-                    int temp = arr[i];
-                    arr[i] = arr[i+1];
-                    arr[i+1] = temp;
-                    count = count+1;
-                }
+        int count = 0;
+        // One pass of bubble sort. After
+        // this pass, the largest element
+        // is moved (or bubbled) to end.
+        for (int i=0; i<n-1; i++)
+            if (arr[i] > arr[i+1])
+            {
+                // swap arr[i], arr[i+1]
+                int temp = arr[i];
+                arr[i] = arr[i+1];
+                arr[i+1] = temp;
+                count = count+1;
+            }
 
-            // Check if any recursion happens or not
-            // If any recursion is not happen then return
-            if (count == 0)
-                return;
+        // Check if any recursion happens or not
+        // If any recursion is not happen then return
+        if (count == 0)
+            return;
 
-            // Largest element is fixed,
-            // recur for remaining array
-            bubbleSortRec(arr, n-1);
-        }
+        // Largest element is fixed,
+        // recur for remaining array
+        bubbleSortRec(arr, n-1);
+    }
 
-        // Driver Method
+    // Driver Method
 
 
 
@@ -414,6 +434,91 @@ public class Main {
                 count++;
         }
         return found;
+    }
+
+
+    //Quick sort
+    public static void Quicksort(int[] array, int start, int end){
+        if (start > end) {
+            return;
+        }
+        int boundary = partition(array,start,end);
+        Quicksort(array,start,boundary-1);
+        Quicksort(array,boundary+1,end);
+    }
+
+    private static int partition(int[] array, int start, int end){
+        int pivot = array[end];
+        int boundary = start-1;
+        for (int i = start; i <= end; i++) {
+            if (array[i] <= pivot){
+                swap(array,i,++boundary);
+            }
+        }
+        return boundary;
+    }
+
+    private static void swap(int[] array, int index1, int index2){
+        int temp = array[index1];
+        array[index1] = array[index2];
+        array[index2] = temp;
+    }
+
+
+
+    public static void RecursiveBubbleSort(int arr[] , int n){   //n=array.length
+        if (n == 1){
+            return;
+        }
+
+        for (int i = 0; i < n - 1; i++){
+            if (arr[i] > arr[i+1]){
+                int temp = arr[i];
+                arr[i] = arr[i+1];
+                arr[i+1] = temp;
+            }
+        }
+        RecursiveBubbleSort(arr , n-1);
+    }
+
+    public static int TernarySearch(int[] array, int target,int left,int right){
+        if (left > right){
+            return -1;
+        }
+        int partionsize = (right - left)/3;
+        int mid1 = left + partionsize;
+        int mid2 = right - partionsize;
+        if (array[mid1] == target){
+            return mid1;
+        }
+        if (array[mid2] == target){
+            return mid2;
+        }
+        if (target < array[mid1]){
+            return TernarySearch(array , target , left , mid1-1);
+        }
+        if (target > array[mid2]){
+            return TernarySearch(array , target , mid1+1 , right);
+        }
+        else {
+            return TernarySearch(array , target , mid1+1 , mid2-1);
+        }
+    }
+
+    public static int recursivebinarysearch(int[]a,int p,int r,int x){ //p=0, r=array.length , x=find number
+        System.out.println("["+p+".... ...."+r+"]");
+        int q;
+        if(p>r)
+            return -1;
+        else{
+            q=(p+r)/2;
+            if(a[q]==x)
+                return q;
+            else if (a[q]>x)
+                return recursivebinarysearch(a,p,q-1,x);
+            else
+                return recursivebinarysearch(a,q+1,r,x);
+        }
     }
 }
 
@@ -798,198 +903,256 @@ public class Main {
 //BinarySearch Tree
 // Main File
 
-import java.util.Arrays;
+//import java.util.Arrays;
+//
+//public class main
+//{
+//    public static void main(String[] args) {
+//        BinaryTree binaryTree = new BinaryTree();
+//        QuickSort quickSort = new QuickSort();
+//
+//       /* //Quick Sort Array
+//        int[] array = {69,420,56,3,45,1,0};
+//        quickSort.sort(array,0,array.length-1);
+//        System.out.println(Arrays.toString(array));*/
+//
+//        binaryTree.insert(7);
+//        binaryTree.insert(4);
+//        binaryTree.insert(9);
+//        binaryTree.insert(1);
+//        binaryTree.insert(6);
+//        binaryTree.insert(8);
+//        binaryTree.insert(10);
+//
+//        boolean result = binaryTree.Find(7);
+//
+//        if(result)
+//            System.out.println("Found!");
+//        else
+//            System.out.println("Not Found!");
+//        System.out.println("Done");
+//
+//        binaryTree.traverAscending();
+//        System.out.println("\n");
+//        binaryTree.traverPreOrder();
+//        System.out.println("\n");
+//        binaryTree.traverDescending();
+//
+//
+//
+//    }
+//}
 
-public class main
-{
-    public static void main(String[] args) {
-        BinaryTree binaryTree = new BinaryTree();
-        QuickSort quickSort = new QuickSort();
-
-       /* //Quick Sort Array
-        int[] array = {69,420,56,3,45,1,0};
-        quickSort.sort(array,0,array.length-1);
-        System.out.println(Arrays.toString(array));*/
-
-        binaryTree.insert(7);
-        binaryTree.insert(4);
-        binaryTree.insert(9);
-        binaryTree.insert(1);
-        binaryTree.insert(6);
-        binaryTree.insert(8);
-        binaryTree.insert(10);
-
-        boolean result = binaryTree.Find(7);
-
-        if(result)
-            System.out.println("Found!");
-        else
-            System.out.println("Not Found!");
-        System.out.println("Done");
-
-        binaryTree.traverAscending();
-        System.out.println("\n");
-        binaryTree.traverPreOrder();
-        System.out.println("\n");
-        binaryTree.traverDescending();
-
-
-
-    }
-}
-
-
-//Tree File
-public class BinaryTree
-{
-
-    private class Node
-    {
-
-        int data;
-        float floatData;
-        Node left;
-        Node right;
-
-        Node(int data)
-        {
-            this.left = null;
-            this.right = null;
-            this.data = data;
-        }
-
-        public String Display() {
-            return "Node = " + data;
-        }
-    }
-
-    private Node root;
-
-    public void BinaryTree()
-    {
-        this.root = null;
-    }
-
-    public boolean isEmpty()
-    {
-        return root == null;
-    }
-
-    public void insert(int data)
-    {
-        if (isEmpty())
-        {
-            root = new Node(data);
-            return;
-        }
-        Node currentNode = root;
-
-        while (true)
-        {
-            if (data<=currentNode.data)
-            {
-                if (currentNode.left == null) {
-                    currentNode.left = new Node(data);
-                   break;
-                }
-                currentNode = currentNode.left;
-            }
-            else
-                {
-                if (currentNode.right == null)
-                {
-                    currentNode.right = new Node(data);
-                    return;
-                }
-                currentNode = currentNode.right;
-            }
-        }
-    }
-
-    public boolean Find(int data)
-    {
-        Node currentNode = root;
-        while (currentNode != null)
-        {
-            if (data < currentNode.data)
-            {
-                currentNode = currentNode.left;
-            }
-            else if (data > currentNode.data)
-            {
-                currentNode = currentNode.right;
-            }
-            else
-                {
-                return true;
-                }
-        }
-        return false;
-    }
-
-
-
-    public void traverAscending()
-    {
-        traverAscending(root);
-    }
-    public void traverDescending()
-    {
-        traverDescending(root);
-
-    }
-    public void traverPreOrder()
-    {
-        traverPreOrder(root);
-    }
-
-    private void traverAscending(Node root)
-    {
-        if (root == null)
-        {
-            return;
-        }
-        traverAscending(root.left);
-        System.out.print(root.data + " ");
-        traverAscending(root.right);
-    }
-
-    private void traverDescending(Node root)
-    {
-        if (root == null)
-        {
-            return;
-        }
-        traverDescending(root.right);
-        System.out.print(root.data + " ");
-        traverDescending(root.left);
-    }
-
-    private void traverPreOrder(Node root)
-    {
-        if (root == null)
-        {
-            return;
-        }
-        System.out.print(root.data + " ");
-        traverPreOrder(root.right);
-        traverPreOrder(root.left);
-    }
-
-    public int Height()
-    {
-        return Height(root);
-    }
-
-    public int Height(Node node)
-    {
-        if (node == null) {
-            return -1;
-        }
-        else if (node.left == null && node.right == null)
-        {
-            return 1;
-        }
-        return 1 + Math.max(Height(node.left), Height(node.right));
-    }
-}
+//
+////Tree File
+//public class BinaryTree
+//{
+//
+//    private class Node
+//    {
+//
+//        int data;
+//        float floatData;
+//        Node left;
+//        Node right;
+//
+//        Node(int data)
+//        {
+//            this.left = null;
+//            this.right = null;
+//            this.data = data;
+//        }
+//
+//        public String Display() {
+//            return "Node = " + data;
+//        }
+//    }
+//
+//    private Node root;
+//
+//    public void BinaryTree()
+//    {
+//        this.root = null;
+//    }
+//
+//    public boolean isEmpty()
+//    {
+//        return root == null;
+//    }
+//
+//    public void insert(int data)
+//    {
+//        if (isEmpty())
+//        {
+//            root = new Node(data);
+//            return;
+//        }
+//        Node currentNode = root;
+//
+//        while (true)
+//        {
+//            if (data<=currentNode.data)
+//            {
+//                if (currentNode.left == null) {
+//                    currentNode.left = new Node(data);
+//                    break;
+//                }
+//                currentNode = currentNode.left;
+//            }
+//            else
+//            {
+//                if (currentNode.right == null)
+//                {
+//                    currentNode.right = new Node(data);
+//                    return;
+//                }
+//                currentNode = currentNode.right;
+//            }
+//        }
+//    }
+//
+//    public boolean Find(int data)
+//    {
+//        Node currentNode = root;
+//        while (currentNode != null)
+//        {
+//            if (data < currentNode.data)
+//            {
+//                currentNode = currentNode.left;
+//            }
+//            else if (data > currentNode.data)
+//            {
+//                currentNode = currentNode.right;
+//            }
+//            else
+//            {
+//                return true;
+//            }
+//        }
+//        return false;
+//    }
+//
+//
+//
+//    public void traverAscending()
+//    {
+//        traverAscending(root);
+//    }
+//    public void traverDescending()
+//    {
+//        traverDescending(root);
+//
+//    }
+//    public void traverPreOrder()
+//    {
+//        traverPreOrder(root);
+//    }
+//
+//    private void traverAscending(Node root)
+//    {
+//        if (root == null)
+//        {
+//            return;
+//        }
+//        traverAscending(root.left);
+//        System.out.print(root.data + " ");
+//        traverAscending(root.right);
+//    }
+//
+//    private void traverDescending(Node root)
+//    {
+//        if (root == null)
+//        {
+//            return;
+//        }
+//        traverDescending(root.right);
+//        System.out.print(root.data + " ");
+//        traverDescending(root.left);
+//    }
+//
+//    private void traverPreOrder(Node root)
+//    {
+//        if (root == null)
+//        {
+//            return;
+//        }
+//        System.out.print(root.data + " ");
+//        traverPreOrder(root.right);
+//        traverPreOrder(root.left);
+//    }
+//
+//    public int Height()
+//    {
+//        return Height(root);
+//    }
+//
+//    public int Height(Node node)
+//    {
+//        if (node == null) {
+//            return -1;
+//        }
+//        else if (node.left == null && node.right == null)
+//        {
+//            return 1;
+//        }
+//        return 1 + Math.max(Height(node.left), Height(node.right));
+//    }
+//
+//
+//
+//    public void min(){
+//        min(root);
+//    }
+//    private int min(Node root){
+//
+//        if (root==null)
+//            new IllegalAccessError();
+//        var current=root;
+//        var last=current;
+//
+//        while (current!=null){
+//            last=current;
+//            current=current.leftChild;
+//        }
+//        return last.value;
+//    }
+//
+//
+//    private int max(Node root){
+//        if (root==null)
+//            throw new RuntimeException();
+//
+//
+//        var current=root;
+//        var last=current;
+//        while (current!=null){
+//            last=current;
+//            current=current.rightChild;
+//
+//        }
+//        return last.value;
+//    }
+//
+//
+//    public boolean equal(Tree ohter){
+//        if (ohter==null){
+//            return false;
+//        }
+//        return equal(root,ohter.root);
+//    }
+//    private boolean equal(Node first,Node second){
+//        if (first==null && second==null){
+//            return true;
+//        }
+//
+//        else if (first!=null &&second!=null) {
+//            return first.value == second.value
+//                    && equal(first.leftChild, second.leftChild)
+//                    && equal(first.rightChild, second.rightChild);
+//        }
+//
+//        else {
+//            return false;
+//        }
+//    }
+//}
